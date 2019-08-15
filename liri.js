@@ -14,7 +14,7 @@ switch(process.argv[2]){
         spotifyThis(process.argv[3]);
         break;
     case "movie-this":
-        //run movie api function
+        movieThis(process.argv[3]);
         break;
     case "do-what-it-says":
         //run that function
@@ -35,4 +35,24 @@ function spotifyThis(song){
 		console.log('Song: The Sign');
 		console.log('Album: The Sign');
 	});
+}
+
+function movieThis(movie){
+    const queryURL = "http://www.omdbapi.com/?apikey=trilogy&t="+process.argv[3];
+   
+    if(process.argv[3]){
+        axios.get(queryURL)
+        .then(function(response){
+            console.log("Title: "+response.data.Title);
+            console.log("Release Year: "+response.data.Year);
+            console.log("IMDB Rating: "+response.data.Ratings[0].Value);
+            console.log("Rotten Tomatoes Rating: "+response.data.Ratings[1].Value);
+            console.log("Country Produced in: "+response.data.Country);
+            console.log("Language: "+response.data.Language);
+            console.log("Plot: "+response.data.Plot);
+            console.log("Actors: "+response.data.Actors);
+
+        })
+    
+    }
 }
