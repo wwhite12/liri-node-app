@@ -17,10 +17,15 @@ switch(process.argv[2]){
         movieThis(process.argv[3]);
         break;
     case "do-what-it-says":
-        //run that function
+        doWhatSays()
         break;
     default:
-        console.log("Enter a command")
+        console.log(
+ `Invalid Command
+ Options: spotify-this-song <song name>
+            movie-this <movie name>
+            do-what-it-says`           
+        )
 };
 
 function spotifyThis(song){
@@ -66,4 +71,25 @@ function movieThis(movie){
             console.log("Actors: "+response.data.Actors);
     })
 }
+}
+
+function doWhatSays(){
+    fs.readFile("./random.txt","utf8",function(err,data){
+        if(err){
+            return console.log(err)
+        }
+        var dataArr = data.split(",");
+
+        switch(dataArr[0]){
+            case "spotify-this-song":
+                spotifyThis(dataArr[1]);
+                break;
+            case "movie-this":
+                movieThis(dataArr[1]);
+                break;
+            default:
+                console.log("Try again")
+        }
+
+    })
 }
