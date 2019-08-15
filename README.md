@@ -39,5 +39,7 @@ Package Dependencies:
     *moment
     *node-spotify-api
 
+#GitHub Repository
+[GitHub] (https://github.com/wwhite12/liri-node-app.git)
 #Creator
 William White
