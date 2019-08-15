@@ -53,6 +53,17 @@ function movieThis(movie){
             console.log("Actors: "+response.data.Actors);
 
         })
-    
-    }
+    }else{
+        axios.get("http://www.omdbapi.com/?apikey=trilogy&t=Mr.Nobody")
+        .then(function(response){
+            console.log("Title: "+response.data.Title);
+            console.log("Release Year: "+response.data.Year);
+            console.log("IMDB Rating: "+response.data.Ratings[0].Value);
+            console.log("Rotten Tomatoes Rating: "+response.data.Ratings[1].Value);
+            console.log("Country Produced in: "+response.data.Country);
+            console.log("Language: "+response.data.Language);
+            console.log("Plot: "+response.data.Plot);
+            console.log("Actors: "+response.data.Actors);
+    })
+}
 }
