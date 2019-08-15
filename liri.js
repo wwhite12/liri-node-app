@@ -7,14 +7,16 @@ const spotify = new Spotify(keys.spotify);
 
 const fs = require("fs");
 
+var userChoice = process.argv.slice(3).join("+");
+
 
 switch(process.argv[2]){
 
     case "spotify-this-song":
-        spotifyThis(process.argv[3]);
+        spotifyThis(userChoice);
         break;
     case "movie-this":
-        movieThis(process.argv[3]);
+        movieThis(userChoice);
         break;
     case "do-what-it-says":
         doWhatSays()
@@ -43,9 +45,9 @@ function spotifyThis(song){
 }
 
 function movieThis(movie){
-    const queryURL = "http://www.omdbapi.com/?apikey=trilogy&t="+process.argv[3];
+    const queryURL = "http://www.omdbapi.com/?apikey=trilogy&t="+userChoice;
    
-    if(process.argv[3]){
+    if(userChoice){
         axios.get(queryURL)
         .then(function(response){
             console.log("Title: "+response.data.Title);
