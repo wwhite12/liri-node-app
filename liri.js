@@ -31,17 +31,22 @@ switch(process.argv[2]){
 };
 
 function spotifyThis(song){
-    spotify.search({type: 'track',query: song,limit:1}).then(function (data) {
-		console.log('Artist: '+data.tracks.items[0].artists[0].name);
-		console.log('Song: '+data.tracks.items[0].name);
-		console.log('Album: '+data.tracks.items[0].album.name);
-		console.log('Spotify Link: '+data.tracks.items[0].preview_url);
+    if(song){
+    spotify.search({type: "track",query: song,limit:1})
+    .then(function (data) {
+		console.log("Artist: "+data.tracks.items[0].artists[0].name);
+		console.log("Song: "+data.tracks.items[0].name);
+		console.log("Album: "+data.tracks.items[0].album.name);
+		console.log("Spotify Link: "+data.tracks.items[0].preview_url);
 		
 	}).catch(function(err) {
-		console.log('Artist: Ace of Base');
-		console.log('Song: The Sign');
-		console.log('Album: The Sign');
-	});
+		console.log(err);
+    });
+    }else{
+        console.log("Artist: Ace of Base");
+		console.log("Song: The Sign");
+		console.log("Album: The Sign");
+    }
 }
 
 function movieThis(movie){
