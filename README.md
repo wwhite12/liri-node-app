@@ -1,6 +1,6 @@
 # liri-node-app
 
-## Functionality:
+## Overview:
 This CLI App gives the user the ability to look up information about any song or movie that they would like to learn more about.
 
 ## Instructions
@@ -29,7 +29,21 @@ The do-what-it-says command will read the random.txt file in this folder and if 
 * Ex:     random.txt --->  movie-this, Jaws
         Output ----> Information on the movie, Jaws.
 ## Code Breakdown
+![Image of primarySwitch]
+(./images/primarySwitch.png)
+* Based on the user's first command (spotify-this-song, movie-this, or do-what-it-says), this switch will determine which function to run.
 
+![Image of spotifyFunction]
+(./images/spotifyThisFunction.png)
+* node-spotify-api allows the user to call the spotify api to gather information on an inputted song.
+
+![Image of movieFunction]
+(./images/movieThisFunction.png)
+* Use of axios to call the OMDB API to gather inputted movie information
+
+![Image of doWhatSaysFunction]
+(./images/doWhatSaysFunction.png)
+* Breaks up random.txt content into an array that then uses switch to determine which function to run
 ## Technology
 Language: JavaScript
 Runtime Environment: Node

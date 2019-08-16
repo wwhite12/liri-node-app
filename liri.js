@@ -72,7 +72,7 @@ function movieThis(movie){
             console.log("Plot: "+response.data.Plot);
             console.log("Actors: "+response.data.Actors);
     })
-}
+    }
 }
 
 function doWhatSays(){
