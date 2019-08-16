@@ -29,19 +29,19 @@ The do-what-it-says command will read the random.txt file in this folder and if 
 * Ex:     random.txt --->  movie-this, Jaws
         Output ----> Information on the movie, Jaws.
 ## Code Breakdown
-![Image of primarySwitch]
+![image]
 (./images/primarySwitch.png)
 * Based on the user's first command (spotify-this-song, movie-this, or do-what-it-says), this switch will determine which function to run.
 
-![Image of spotifyFunction]
+![image]
 (./images/spotifyThisFunction.png)
 * node-spotify-api allows the user to call the spotify api to gather information on an inputted song.
 
-![Image of movieFunction]
+![image]
 (./images/movieThisFunction.png)
 * Use of axios to call the OMDB API to gather inputted movie information
 
-![Image of doWhatSaysFunction]
+![image]
 (./images/doWhatSaysFunction.png)
 * Breaks up random.txt content into an array that then uses switch to determine which function to run
 ## Technology
